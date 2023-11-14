@@ -4,7 +4,7 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
 
 trigger:
-- build_pipeline_test
+- master
 
 pool:
   vmImage: ubuntu-latest
@@ -15,6 +15,3 @@ variables:
 steps:
 - script: dotnet build --configuration $(buildConfiguration)
   displayName: 'dotnet build $(buildConfiguration)'
-- task: DotNetCoreCLI@2
-  inputs:
-    command: 'build'
